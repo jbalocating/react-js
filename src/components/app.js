@@ -29,12 +29,9 @@ export default class App extends Component{
     }
 
     showList() {
-        return
-            this.state.list.map(function(list, index) {
-                return <li key={index}> {list} </li>
+        return this.state.list.map(function(item, index) {
+                return (<li key={index}> {item} </li>);
             });
-
-
     }
 
     render(){
@@ -42,10 +39,12 @@ export default class App extends Component{
             <div>
                 <PostField
                     submit={this.handleSubmit}
-                    list={this.handleAddList}
+                    add={this.handleAddList}
                 />
                 <p>Output here : {this.state.post}</p>
-                <p>{this.showList()}</p>
+                    <ul>
+                        {this.showList()}
+                    </ul>
             </div>
         )
     }

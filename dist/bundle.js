@@ -18334,22 +18334,18 @@ var App = function (_Component) {
             });
         }
     }, {
-        key: 'showlist',
-        value: function showlist() {
+        key: 'showList',
+        value: function showList() {
             return;
-            _react2.default.createElement(
-                'ul',
-                null,
-                this.state.list.map(function (list, index) {
-                    return _react2.default.createElement(
-                        'li',
-                        { key: index },
-                        ' ',
-                        list,
-                        ' '
-                    );
-                })
-            );
+            this.state.list.map(function (list, index) {
+                return _react2.default.createElement(
+                    'li',
+                    { key: index },
+                    ' ',
+                    list,
+                    ' '
+                );
+            });
         }
     }, {
         key: 'render',
@@ -18367,7 +18363,11 @@ var App = function (_Component) {
                     'Output here : ',
                     this.state.post
                 ),
-                this.showList()
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    this.showList()
+                )
             );
         }
     }]);
@@ -18429,7 +18429,7 @@ var App = function (_Component) {
     }, {
         key: 'handleAdd',
         value: function handleAdd() {
-            this.state.list(this.refs.post.value);
+            this.props.list(this.refs.post.value);
         }
     }, {
         key: 'render',

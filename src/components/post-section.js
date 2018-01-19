@@ -17,7 +17,7 @@ export default class App extends Component{
     }
 
     handleAdd() {
-        this.props.list(this.refs.post.value);
+        this.props.add(this.refs.post.value);
     }
 
     render(){
